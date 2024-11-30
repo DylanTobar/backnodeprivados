@@ -1,4 +1,3 @@
-
 const ProyectService = require("../services/proyect.service")
 
 const getAllProyects= async(req,res) =>{

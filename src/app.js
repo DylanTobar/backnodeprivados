@@ -1,5 +1,4 @@
 import express from "express";
-import morgan from "morgan";
 // Import Routes
 import proyectRoutes from "./routes/proyect.routes.js"
 import authRoutes from "./routes/auth.routes.js"
@@ -12,7 +11,6 @@ app.set('port', process.env.PORT || 3000);
 
 //Middlewares
 app.use(express.json());
-app.use(morgan("dev"));
 app.use(cors())
 
 
