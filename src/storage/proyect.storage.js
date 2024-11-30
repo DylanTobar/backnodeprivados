@@ -20,18 +20,19 @@ const createNewProyect = async (newProyect) => {
     newProyect.active = 1,
     newProyect.availabale = 3
     try{
+        console.log("adios")
         const connection = await getConnection();
         const verifyProyect = await connection.query(`
         SELECT proyect_name 
-        FROM proyect 
+        FROM ha0klysawmthhq8w.proyect 
         WHERE proyect_name = ? `,newProyect.proyect_name);
         if (verifyProyect.length <= 0) {
+            console.log("hola")
             await connection.query(`
-            INSERT INTO proyect (idproyect,proyect_name,client_name,description,start_date,est_end_date,end_date,id_status,assigned_to) 
-            VALUES (?,?,?,?,?,?,?,?,?)`,
-            [newProyect.idproyect,newProyect.proyect_name,newProyect.client_name,newProyect.description,newProyect.start_date,newProyect.est_end_date,newProyect.end_date,newProyect.id_status, newProyect.assigned_to]);
-            return {idproyect: newProyect.idproyect, 
-                proyect_name: newProyect.proyect_name, 
+            INSERT INTO ha0klysawmthhq8w.proyect (proyect_name,client_name,description,start_date,est_end_date,end_date,id_status,assigned_to) 
+            VALUES (?,?,?,?,?,?,?,?)`,
+            [newProyect.proyect_name,newProyect.client_name,newProyect.description,newProyect.start_date,newProyect.est_end_date,newProyect.end_date,newProyect.id_status, newProyect.assigned_to]);
+            return {proyect_name: newProyect.proyect_name, 
                 client_name: newProyect.client_name,
                 description: newProyect.description,
                 start_date: newProyect.start_date,

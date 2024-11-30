@@ -13,8 +13,9 @@ const getAllProyects= async(req,res) =>{
 const createNewProyect= async(req,res) =>{
     
     try{
+
         const proyect = {
-            idproyect: NULL,
+            idproyect: '',
             proyect_name: req.body.proyect_name,
             client_name: req.body.client_name,
             description: req.body.description,
@@ -24,6 +25,7 @@ const createNewProyect= async(req,res) =>{
             id_status: 1,
             assigned_to: 1,
         };
+
         const createdProyect = await ProyectService.createNewProyect(proyect);
         if (createdProyect.status == 400) {
             res.status(400).json({data: createdProyect})

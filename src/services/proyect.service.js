@@ -12,6 +12,7 @@ const getAllProyects = async () => {
 const createNewProyect = async (newProyect) => {
     try {
         const createdProyect = await ProyectStorage.createNewProyect(newProyect);
+        console.log(newProyect);
         return createdProyect;
     } catch (error) {
         throw error;
