@@ -1,4 +1,4 @@
-const ProyectService = require("../services/proyect.service")
+import ProyectService from '../services/proyect.service';
 
 const getAllProyects= async(req,res) =>{
     try{
