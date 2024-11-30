@@ -1,0 +1,122 @@
+@host = http://localhost:3000/api
+
+### Obteniendo Todas las Personas
+GET {{host}}/exteriorRequest/3?value=complete
+
+### Obteniendo Todas las Personas
+GET {{host}}/exteriorRequest/?created_by=Secre1
+
+### Obteniendo una Persona
+GET {{host}}/exteriorRequest/5?value=
+
+### Creando una Nueva Persona
+POST {{host}}/exteriorRequest
+Content-Type: application/json
+
+{
+    "requesting_unit": "Comision de Carros",
+    "commission_manager": "Ing. Esdras Morales",
+    "date_request": "2022/10/02",
+    "objective_request": "Ver el estado de los carros",
+    "duration_days": "12",
+    "phoneNumber": "41806704",
+    "observations": "Ninguna",
+    "provide_fuel": "1",
+    "provide_travel_expenses": "1",
+    "reason_rejected": "Ninguna",
+    "boss":"Dylan",
+    "detail":   [
+        {
+        "number_people": "2",
+        "department": "Jalapa",
+        "municipality":"Jalapa",
+        "village":"Pinula",
+        "dateOf": "2022/02/02", 
+        "dateTo": "2022/02/02",
+        "hour":"10:10:10"
+        },
+        {
+        "number_people": "4",
+        "department": "Guatemala",
+        "municipality":"Guatemala",
+        "village":"Barcenas",
+        "dateOf": "2022/01/01", 
+        "dateTo": "2022/01/01",
+        "hour":"20:20:20"
+        },
+        {
+        "number_people": "2",
+        "department": "Jalapa",
+        "municipality":"Jalapa",
+        "village":"Pinula",
+        "dateOf": "2022/02/02", 
+        "dateTo": "2022/02/02",
+        "hour":"10:10:10"
+        },
+        {
+        "number_people": "4",
+        "department": "Guatemala",
+        "municipality":"Guatemala",
+        "village":"Barcenas",
+        "dateOf": "2022/01/01", 
+        "dateTo": "2022/01/01",
+        "hour":"20:20:20"
+        },
+        {
+        "number_people": "2",
+        "department": "Jalapa",
+        "municipality":"Jalapa",
+        "village":"Pinula",
+        "dateOf": "2022/02/02", 
+        "dateTo": "2022/02/02",
+        "hour":"10:10:10"
+        }
+    ]
+}
+
+### Actualizando Solicitud
+PUT {{host}}/exteriorRequest/edit/4
+Content-Type: application/json
+
+{
+    "pilot_name": "b03bee99-4a83-4f4b-a8c0-62a2249fc1fd",
+    "plate_vehicle": "1",
+    "provide_fuel": "",
+    "provide_travel_expenses":"",
+    "status_request": 7
+}
+
+### Obteniendo una Persona
+GET {{host}}/exteriorRequest/complete/25
+
+### Creando una Nueva Persona
+POST {{host}}/exteriorRequest
+Content-Type: application/json
+
+{
+  "requesting_unit": "ñlkjasd",
+  "commission_manager": "asñldj",
+  "date_request": "2023/05/02",
+  "objective_request": "añsldj",
+  "duration_days": 13,
+  "phoneNumber": 123,
+  "observations": ",",
+  "provide_fuel": "1",
+  "provide_travel_expenses": "2",
+  "plate_vehicle": "",
+  "pilot_name": "",
+  "reason_rejected": "",
+  "status_request": "",
+  "created_by": "Esdras",
+  "detail": [
+    {
+      "dateOf": "2023-05-24",
+      "dateTo": "2023-05-11",
+      "hour": "01:18",
+      "department": "Chimaltenango",
+      "number_people": 12,
+      "municipality": "Acatenango",
+      "village": "123"
+    }
+  ]
+}

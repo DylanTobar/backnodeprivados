@@ -1,0 +1,47 @@
+@host = http://localhost:3000/api
+
+### Obteniendo Todas las Personas
+GET {{host}}/persons
+
+### Obteniendo Todos los Pilotos
+GET {{host}}/persons/pilots
+
+### Obteniendo Todos los Pilotos
+POST {{host}}/persons/pilotsActives
+Content-Type: application/json
+
+{
+    "inicialDateOf": "2023-03-31T06:00:00.000Z",
+    "finalDateTo": "2023-04-03T06:00:00.000Z"
+}
+
+### Obteniendo una Persona
+GET {{host}}/persons/1548e177-2e29-48da-add8-ef1af5c7c2a6
+
+### Creando una Nueva Persona
+POST {{host}}/persons
+Content-Type: application/json
+
+{
+    "fullname": "Esdras Morales",
+    "job": "2",
+    "phone": 41806703,
+    "dpi": 1234567891,
+    "nit": 5885532
+}
+
+### Modificando una Persona
+PUT {{host}}/persons/76a01bb7-9eff-44b1-a36a-1c39ed5ede76
+Content-Type: application/json
+
+{
+    "fullname": "Esdras Mefiboseth Morales",
+    "job": "1",
+    "phone": 41806704,
+    "dpi": 3395399682101,
+    "nit": 105777943
+}
+
+### Eliminando una Persona
+DELETE {{host}}/persons/76a01bb7-9eff-44b1-a36a-1c39ed5ede76
+Content-Type: application/json

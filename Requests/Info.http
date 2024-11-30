@@ -1,0 +1,22 @@
+@host = http://localhost:3000/api/info
+
+### Obteniendo Todos los Tipos
+GET {{host}}/types
+
+### Obteniendo Todos los Trabajos
+GET {{host}}/jobs
+
+### Obteniendo Todos los Estatus de Vehiculos
+GET {{host}}/vehicles
+
+### Obteniendo Todos los Estatus de Personas
+GET {{host}}/persons
+
+### Obteniendo Todos los Estatus de Solicitudes
+GET {{host}}/request
+
+### Obteniendo Todos los Estatus de Viajes
+GET {{host}}/trips
+
+### Obteniendo Todos los Roles
+GET {{host}}/roles

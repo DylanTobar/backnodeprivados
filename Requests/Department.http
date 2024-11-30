@@ -1,0 +1,7 @@
+@host = http://localhost:3000/api
+
+### Obteniendo Todos los Departamentos
+GET {{host}}/departments
+
+### Obteniendo Un solo Departamento
+GET {{host}}/departments/Alta Verapaz

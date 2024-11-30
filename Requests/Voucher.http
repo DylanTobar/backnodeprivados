@@ -1,0 +1,90 @@
+@host = http://localhost:3000/api
+
+###
+# @name login
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "DTKingdom",
+    "password": "admin234"
+}
+
+### Obteniendo Todos los Vales Diesel
+GET {{host}}/voucher/diesel
+Authorization: Bearer {{login.response.body.token}}
+
+### Obteniendo Todos los Vales Regular
+GET {{host}}/voucher/regular
+Authorization: Bearer {{login.response.body.token}}
+
+### Obteniendo Todos los Vales Activos
+GET {{host}}/vehicles/active
+Authorization: Bearer {{login.response.body.token}}
+
+### Obteniendo Todos los Vales Diesel
+GET {{host}}/voucher/diesel/1
+Authorization: Bearer {{login.response.body.token}}
+
+
+### Obteniendo Todos los Vales Diesel
+GET {{host}}/voucher/regular/1
+Authorization: Bearer {{login.response.body.token}}
+
+### Obteniendo un Solo Vehiculo Para el Voucher
+GET {{host}}/vehicles/voucher/123141231
+
+### Creando un Nuevo Vale Diesel
+POST {{host}}/voucher/diesel
+Content-Type: application/json
+
+{
+    "date": "2022-01-01",
+    "cost": 1500,
+    "idVehicle": "1",
+    "comission_to": "Nose",
+    "objective": "nmose",
+    "id_pilot": "a32f4098-de18-4486-9ea6-23977dc55aed",
+    "service_of": "nose",
+    "comission_date": "2022-01-01",
+    "km_to_travel": 1,
+    "idtrips": 2
+}
+
+### Creando un Nuevo Vale Regular
+POST {{host}}/voucher/regular
+Content-Type: application/json
+
+{
+    "date": "2022-01-01",
+    "cost": 1500,
+    "idVehicle": "1",
+    "comission_to": "Nose",
+    "objective": "nmose",
+    "id_pilot": "a32f4098-de18-4486-9ea6-23977dc55aed",
+    "service_of": "nose",
+    "comission_date": "2022-01-01",
+    "km_to_travel": 1,
+    "idtrips": 3
+}
+
+### Modificando un Vehiculo
+PUT {{host}}/vehicles/1023813281092381
+Content-Type: application/json
+
+{
+    "plate": "O0-628BBH",
+    "type": "1",
+    "brand": "D-MAX",
+    "model": 2023,
+    "km": 1,
+    "gas": "SUPER",
+    "status": 2,
+    "color": "blanco",
+    "cylinders": 4
+
+}
+
+### Eliminando un Vehiculo
+DELETE {{host}}/vehicles/908735s52415632
+Content-Type: application/json
